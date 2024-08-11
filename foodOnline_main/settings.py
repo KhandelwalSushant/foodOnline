@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -64,7 +66,7 @@ TEMPLATES = [
         'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
-            'context_processors': [
+            'context_processors': [ # what ever is written in this is available in all html files
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -89,6 +91,14 @@ DATABASES = {
         'HOST': config('DB_HOST'),
     }
 }
+
+AUTH_USER_MODEL = 'accounts.User'
+
+'''When to Use AUTH_USER_MODEL
+Custom Fields: When you need to add additional fields (e.g., profile information) to the user model.
+Custom Methods: When you want to define custom methods or override existing ones.
+Custom User Authentication: When you need different authentication behavior or custom user management.
+'''
 
 
 # Password validation
@@ -131,7 +141,17 @@ STATICFILES_DIRS = [
     'foodOnline_main/static'
 ]
 
+# Media files configuration
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR /'media'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
