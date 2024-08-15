@@ -41,11 +41,11 @@ class UserManager(BaseUserManager): # it will not contain any field
 
 
 class User(AbstractBaseUser): # it will tipically store the user data that is field
-    RESTAURANT = 1
+    VENDOR = 1
     CUSTOMER = 2
 
     ROLE_CHOICE = (
-        (RESTAURANT,'Restaurant'),
+        (VENDOR,'Vendor'),
         (CUSTOMER,'Customer')
     )
     first_name = models.CharField(max_length=50)
