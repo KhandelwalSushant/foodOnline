@@ -80,6 +80,13 @@ class User(AbstractBaseUser): # it will tipically store the user data that is fi
     def has_module_perms(self, app_label):
         return True
     
+    def get_role(self):
+        if self.roles == 1:
+            user_role = 'Vendor'
+        elif self.roles == 2:
+            user_role = 'Customer'
+        return user_role
+    
     # has_perm and has_module_perms will return true if the user is an active superuser or is an admin
     # and for inactive users it will always return false
     # by default only admin and superadmin can have access to this module
