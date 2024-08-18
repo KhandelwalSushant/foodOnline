@@ -8,6 +8,6 @@ urlpatterns =[
     path('logout/', views.logout, name='logout'),
     path('myAccount/', views.myAccount, name='myAccount'),    
     path('custdashboard/', views.custdashboard, name='custdashboard'),
-    path('vendordashboard', views.vendordashboard, name='vendordashboard')
+    path('vendordashboard/', views.vendordashboard, name='vendordashboard')
 
 ]
