@@ -156,3 +156,13 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
+
+# Email configuration for token verification
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT =  587 # this is an integer value hence we have to specify the cast
+EMAIL_HOST_USER = 'sushantkhandelwal2@gmail.com'
+EMAIL_HOST_PASSWORD = 'omwfjebbznisppiv'
+EMAIL_USE_TLS = True
+DFFAULT_FROM_EMAIL = 'foodOnline Marketplace <sushantkhandelwal2@gmail.com>'
