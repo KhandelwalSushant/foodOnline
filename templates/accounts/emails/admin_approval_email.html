@@ -1,0 +1,13 @@
+{% autoescape off %} <!-- it means that we trust the values from where they are coming -->
+
+Hi {{user.first_name}},
+
+{% if is_approved %}
+Congatulations! Your  vendor account is approved by our admin team. --foodonline
+
+{% else %}
+We are Sorry! You are not eligible for publishing your food menu on our marketplace. For more details, please contact foodonline.com. --foodonline
+
+{% endif %}
+
+{% endautoescape %}
